@@ -1,0 +1,49 @@
+<html>
+    <h1>Nearbuy Test Page</h1>
+    <h1 id="text">수험생 여러분!
+        코로나 극복하고 수능 대박냅시다~!
+    </h1>
+    <h2 id="time"></h2>
+    <input id="button" type="button" value="응원받기" onclick="nextpage();"></input>
+</html>
+<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+<script src="./post.js"></script>
+<script>
+var next_text = "포춘 쿠키가 떨어졌습니다~!!\n응원받고 힘내세요!";
+
+var data = {
+    id: "id",
+    value: "value",
+    name: "name"
+}
+
+
+function nextpage() {
+    console.log("aa");
+    document.getElementById("text").innerHTML = next_text;
+
+    document.getElementById("time").innerHTML = "남은 " + getDDay() + "일\n화이팅입니다!";
+
+    document.getElementById("button").type = "hidden";
+    document.getElementById("button").value = "";
+
+    //callPost();
+}
+
+function getDDay() {
+    var today = new Date();
+    console.log(today);
+    var d_day = new Date();
+    d_day.setFullYear(2020);
+    d_day.setMonth(11);
+    d_day.setDate(3);
+    d_day.setHours(0);
+    d_day.setMinutes(0);
+    d_day.setSeconds(0);
+    console.log(d_day);
+    console.log(d_day - today);
+
+    return (parseInt((d_day - today) / (1000*60*60*24) + 1)).toString();
+}
+
+</script>
