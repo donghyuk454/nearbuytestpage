@@ -14,8 +14,10 @@
                   <label class="tgl-btn" data-tg-off="Nope" data-tg-on="Yeah!" for="cb5"></label>
                 </li>
             </ul>
-            <button value="Next" onclick="nextpage1();">NEXT!</button>
-        </div>
+            <div class="butcon">
+              <button class="button" value="Next" onclick="nextpage1();">NEXT!</button>
+            </div>
+          </div>
         <div id="page2">
     
         </div>
@@ -57,13 +59,17 @@ function nextpage1() {
 
     var button = document.createElement("button");
     button.innerHTML = "응원받기";
-    button.setAttribute("id", "button");
+    button.setAttribute("class", "button");
     button.setAttribute("onclick", "nextpage2();");
+    var buttoncont = document.createElement("div");
+    buttoncont.setAttribute("class", "butcon");
 
     var container = document.getElementById("page2");
     container.appendChild(h1);
     container.appendChild(h2);
-    container.appendChild(button);
+    container.appendChild(buttoncont);
+
+    buttoncont.appendChild(button);
 }
 
 function nextpage2() {
@@ -366,5 +372,24 @@ h4 {
   -webkit-transform: rotateY(20deg);
           transform: rotateY(20deg);
 }
-
+.button {
+  background-color: skyblue;
+  border: 1px solid white;
+  color: white;
+  size: 40ch;
+  width: 300px;
+  height: 100px;
+  font-size: 60px;
+  position: absolute;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  top: 80%;
+  left: 55%;
+}
+.butcon {
+  margin-left: -150px;
+  padding-top: 40px;
+}
 </style>
