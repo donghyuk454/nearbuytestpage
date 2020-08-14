@@ -1,22 +1,122 @@
 <html>
+  <head>
+    <style>
+      html,
+      body {
+        display: -webkit-box;
+        display: flex;
+        min-height: 100%;
+        -webkit-box-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+                align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+                flex-direction: column;
+        font-family: sans-serif;
+      }
+      
+      ul,
+      li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .tg-list {
+        text-align: center;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+                align-items: center;
+      }
+      
+      .tg-list-item {
+        margin: 0 2em;
+      }
+      
+      h1 {
+        font-size: 50px;
+      }
+      
+      h2 {
+        font-size: 40px;
+        color: #777;
+      }
+      
+      h4 {
+        color: #999;
+      }
+      
+      .button {
+        background-color: skyblue;
+        border: 1px solid white;
+        color: white;
+        size: 40ch;
+        width: 300px;
+        height: 100px;
+        font-size: 60px;
+        position: absolute;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        top: 80%;
+        left: 55%;
+      }
+      .butcon {
+        margin-left: -150px;
+        padding-top: 40px;
+      }
+      #boy {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        margin-right: -10px;
+        font-size: 40px;
+      }
+      #girl {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        margin-left: 10px;
+        font-size: 40px;
+      }
+      #btn_group button {
+        border: 1px solid skyblue;
+        background-color: skyblue;
+        color: white;
+        padding: 5px;
+      }
+      #btn_group button:hover{
+        color:white;
+        background-color: skyblue;
+      }
+      </style>
+  </head>
+  <body>
     <div id="main">
-        <div id="page1">
-            <h1>Nearbuy Test Page</h1>
-            <h2>성별<h2>
-            <div id="btn_group">
-              <button id="boy" onclick="button_clicked('gender', 1)">남자</button>
-              <button id="girl" onclick="button_clicked('gender', 2)">여자</button>
-            </div>
-            <div class="butcon">
-              <button class="button" value="Next" onclick="nextpage1();">NEXT!</button>
-            </div>
+      <div id="page1">
+          <h1>Nearbuy Test Page</h1>
+          <h2>성별<h2>
+          <div id="btn_group">
+            <button id="boy" onclick="button_clicked('gender', 1)">남자</button>
+            <button id="girl" onclick="button_clicked('gender', 2)">여자</button>
           </div>
-        <div id="page2">
-    
+          <div class="butcon">
+            <button class="button" value="Next" onclick="nextpage1();">NEXT!</button>
+          </div>
         </div>
-        <div id="page3">
+      <div id="page2">
+  
+      </div>
+      <div id="page3">
+  
+      </div>
+  </body>
     
-        </div>
 </html>
 <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 <script src="./post.js"></script>
