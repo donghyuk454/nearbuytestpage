@@ -58,8 +58,8 @@
         height: 35px;
       }
 
-      .button {
-        background-color: gray;
+      #but {
+        background-color: #2e2831;
         border: 1px solid white;
         color: white;
         size: 40ch;
@@ -67,17 +67,16 @@
         height: 100px;
         font-size: 60px;
         position: absolute;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
         top: 80%;
-
+        left: 340px;
       }
       .butcon {
         margin-left: -150px;
         padding-top: 40px;
-        left: 50%;
       }
       #boy {
         border-top-left-radius: 30px;
@@ -100,7 +99,7 @@
         font-size: 40px;
       }
       #btn_group button {
-        border: 1px solid gray;
+        border: 1px solid #2e2831;
         background-color: gray;
         color: white;
         padding: 5px;
@@ -108,7 +107,7 @@
       }
       #btn_group button:hover{
         color:white;
-        background-color: black;
+        background-color: gray;
       }
       #main{
         height: 1100px;
@@ -131,10 +130,10 @@
           
           <div class="togcon">
             <strong>정보수집에 동의</strong>
-            <input type="checkbox" class="toggle"></input>
+            <input type="checkbox" id="check" class="toggle"></input>
           </div>
           <div class="butcon">
-            <button class="button" value="Next" onclick="nextpage1();">NEXT!</button>
+            <button class="button" id="but" value="Next" onclick="nextpage1();">NEXT!</button>
           </div>
         </div>
       <div id="page2">
@@ -152,6 +151,11 @@
 <script>
 var gender = 0; // 남자면 1, 여자면 2
 
+function button_center()
+{
+  document.getElementById("but").style = "left: 340;"
+}
+
 // 두번째 페이지 구성
 function nextpage1() { 
     console.log("page2");
@@ -160,19 +164,24 @@ function nextpage1() {
         alert("성별을 체크해주세요");
         return;
     }
+    else if (document.getElementById('check').checked === false)
+    {
+        alert('정보 수집에 동의해주세요')
+        return;
+    }
     // UI 구성
     document.getElementById("main")
         .removeChild(document.getElementById("page1"));
     
     var h1 = document.createElement("h1");
-    h1.innerHTML = "수험생 여러분!";
+    h1.innerHTML = "버튼을 눌러 캡슐을 뽑으세요!";
 
     var h2 = document.createElement("h1");
     h2.innerHTML = "코로나 극복하고 수능 대박냅시다~!";
 
     var button = document.createElement("button");
-    button.innerHTML = "응원받기";
-    button.setAttribute("class", "button");
+    button.innerHTML = "OPEN!";
+    button.setAttribute("id", "but");
     button.setAttribute("onclick", "nextpage2();");
     var buttoncont = document.createElement("div");
     buttoncont.setAttribute("class", "butcon");
