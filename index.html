@@ -118,16 +118,11 @@
   </body>
     
 </html>
+<script src="post.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 <script src="./post.js"></script>
 <script>
 var gender = 0; // 남자면 1, 여자면 2
-
-var data = {
-    id: "id",
-    value: "value",
-    name: "name"
-}
 
 // 두번째 페이지 구성
 function nextpage1() { 
@@ -166,7 +161,14 @@ function nextpage1() {
 function nextpage2() { 
     console.log("page3");
 
+    var data = {
+      gender: 0
+    };
+
+    data.gender = gender;
     // TODO: 사물함에 요청 보내기
+
+    callPost(data);
 
     // UI 구성
     document.getElementById("main")
@@ -190,6 +192,7 @@ function nextpage2() {
 
     //callPost();
 }
+ 
 
 // D-day 계산
 function getDDay() {
@@ -219,7 +222,7 @@ function button_clicked(type, value) {
       check_gender(value);
     }
 }
-
+// 성별 버튼 리셋
 function button_clear_gender()
 {
     document.getElementById("boy").style = "";
