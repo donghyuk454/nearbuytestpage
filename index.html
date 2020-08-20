@@ -74,6 +74,9 @@
         top: 80%;
         left: 340px;
       }
+      #but:active { 
+        border: 2px solid white;
+      }
       .butcon {
         margin-left: -150px;
         padding-top: 40px;
@@ -88,6 +91,12 @@
         width: 200px;
         font-size: 40px;
       }
+      #boy:active { 
+        position: relative; 
+        top: 2px; 
+        margin-bottom: 2px; 
+        box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.42); 
+      }
       #girl {
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
@@ -97,6 +106,12 @@
         height: 80px;
         width: 200px;
         font-size: 40px;
+      }
+      #girl:active { 
+        position: relative; 
+        top: 2px; 
+        margin-bottom: 2px; 
+        box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.42); 
       }
       #btn_group button {
         border: 1px solid #2e2831;
@@ -108,6 +123,11 @@
       #btn_group button:hover{
         color:white;
         background-color: gray;
+      }
+      #egg {
+        margin-top: 200px;
+        left: 50%;
+        padding-left: 130px;
       }
       #main{
         height: 1100px;
@@ -124,13 +144,13 @@
           <!--<h1>Nearbuy Test Page</h1>-->
           <h1>성별을 선택해주세요.<h1>
           <div id="btn_group">
-            <button id="boy" onclick="button_clicked('gender', 1)">남자</button>
-            <button id="girl" onclick="button_clicked('gender', 2)">여자</button>
+            <button id="boy" onclick="button_clicked('gender', 1);">남자</button>
+            <button id="girl" onclick="button_clicked('gender', 2);">여자</button>
           </div>
           
           <div class="togcon">
             <strong>정보수집에 동의</strong>
-            <input type="checkbox" id="check" class="toggle"></input>
+            <input type="checkbox" id="check" class="toggle" onclick="buttoncontrol();"></input>
           </div>
           <div class="butcon">
             <button class="button" id="but" value="Next" onclick="nextpage1();">NEXT!</button>
@@ -150,10 +170,23 @@
 <script src="./post.js"></script>
 <script>
 var gender = 0; // 남자면 1, 여자면 2
+buttoncontrol();
 
 function button_center()
 {
   document.getElementById("but").style = "left: 340;"
+}
+
+function buttoncontrol()
+{
+  if(gender !== 0 && document.getElementById('check').checked === true)
+    {
+        document.getElementById('but').style = "background-color: #2e2831;";  
+    }
+    else
+    {
+        document.getElementById('but').style = "background-color: gray;";
+    }
 }
 
 // 두번째 페이지 구성
@@ -176,8 +209,12 @@ function nextpage1() {
     var h1 = document.createElement("h1");
     h1.innerHTML = "버튼을 눌러 캡슐을 뽑으세요!";
 
-    var h2 = document.createElement("h1");
-    h2.innerHTML = "코로나 극복하고 수능 대박냅시다~!";
+    var img = document.createElement("img");
+    img.setAttribute("src", "./img/egg.png");
+    img.setAttribute("id", "egg");
+
+    //var h2 = document.createElement("h1");
+    //h2.innerHTML = "코로나 극복하고 수능 대박냅시다~!";
 
     var button = document.createElement("button");
     button.innerHTML = "OPEN!";
@@ -188,7 +225,8 @@ function nextpage1() {
 
     var container = document.getElementById("page2");
     container.appendChild(h1);
-    container.appendChild(h2);
+    container.appendChild(img);
+    //container.appendChild(h2);
     container.appendChild(buttoncont);
 
     buttoncont.appendChild(button);
@@ -258,6 +296,8 @@ function button_clicked(type, value) {
       console.log("성별: 남자면 1, 여자면 2  =>   " + gender);
       check_gender(value);
     }
+
+    buttoncontrol();
 }
 // 성별 버튼 리셋
 function button_clear_gender()
