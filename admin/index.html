@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <style>
+            h1 {
+                font-size : 80px;
+            }
+            strong, h3 {
+                font-size: 50px;
+            }
+            div {
+                margin-top: 10px;
+            }
+            #add, #update {
+                font-size: 50px;
+                width: 140px;
+            }
+            .button {
+                font-size : 50px;
+                border-top-left-radius: 30px;
+                border-top-right-radius: 30px;
+                border-bottom-left-radius: 30px;
+                border-bottom-right-radius: 30px;
+                color: white;
+                background-color: #2e2831;
+                margin-left: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>test 1 어드민 페이지</h1>
+        <div>
+            <strong>현재 재고량 : </strong>
+            <strong id="count"> 0 개</strong>
+            <input class="button" type="button" value="새로고침"></input>
+        </div>
+        <div>
+            <h3>재고량 추가</h3>
+            <input id="add" type="text" placeholder="0"/> <strong>개</strong>
+            <input class="button" type="button" value="추가하기" onclick="addstock();"></input>
+        </div>
+        <div>
+            <h3>재고량 수정</h3>
+            <input id="update" type="text" placeholder="0"/> <strong>개</strong>
+            <input class="button" type="button" value="수정하기" onclick="updatestock();"></input>
+        </div>
+    </body>
+</html>
+
+<script>
+    function addstock()
+    {
+        var stock = document.getElementById('add').value;
+        if(stock)
+            alert(stock + ' 개 추가완료!');
+        else alert('입력 부탁해요');
+    }
+    function updatestock()
+    {
+        var stock = document.getElementById('update').value;
+        if(stock)
+            alert(stock + ' 개로 수정완료!');
+        else alert('입력 부탁해요');
+    }
+</script>
