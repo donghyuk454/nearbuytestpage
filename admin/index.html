@@ -31,7 +31,7 @@
         <div>
             <strong>현재 재고량 : </strong>
             <strong id="count"> 0 개</strong>
-            <input class="button" type="button" value="새로고침"></input>
+            <input class="button" type="button" value="새로고침" onclick="getstock();"></input>
         </div>
         <div>
             <h3>재고량 추가</h3>
@@ -45,20 +45,69 @@
         </div>
     </body>
 </html>
-
+<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 <script>
+    var server = "http://ec2-3-129-5-85.us-east-2.compute.amazonaws.com:3000";
+    getstock();
+
     function addstock()
     {
         var stock = document.getElementById('add').value;
         if(stock)
-            alert(stock + ' 개 추가완료!');
+            addstockToServer(stock);
         else alert('입력 부탁해요');
+
     }
     function updatestock()
     {
         var stock = document.getElementById('update').value;
         if(stock)
-            alert(stock + ' 개로 수정완료!');
+            updatestockToServer(stock);
         else alert('입력 부탁해요');
+
+    }
+
+    function addstockToServer(stock)
+    {
+        var data = {
+            stock: stock
+        }
+
+        $.post(server + "/add", data, function(r){
+            //var o = JSON.parse(r);
+            console.log(r);
+            alert(stock + ' 개 추가완료!');
+        });
+
+        getstock();
+    }
+
+    function updatestockToServer(stock)
+    {
+        var data = {
+            stock: stock
+        }
+
+        $.post(server + "/update", data, function(r){
+            //var o = JSON.parse(r);
+            console.log(r);
+            alert(stock + ' 개로 수정완료!');
+        });
+
+        getstock();
+    }
+
+    function getstock()
+    {
+        $.get(server + "/check", function(r) {
+            console.log(r);
+            
+            if(r.stock) {
+                var stock = r.stock;
+                console.log("stock : " + stock);
+                document.getElementById("count").innerHTML = stock.toString() + " 개";
+            }
+            else document.getElementById("count").innerHTML = 'err';
+        });
     }
 </script>
