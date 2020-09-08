@@ -273,55 +273,90 @@ function nextpage2() {
     data.gender = gender;
     // TODO: 사물함에 요청 보내기
 
+    $.post("http://ec2-3-129-5-85.us-east-2.compute.amazonaws.com:3000/minus", function(r){
+      //var o = JSON.parse(r);
+      console.log(r);
+
+      if(r.content === "-1 done") {
+        // UI 구성
+        document.getElementById("main")
+          .removeChild(document.getElementById("page2"));
+
+        var h1 = document.createElement("h1");
+        h1.setAttribute("style","margin-bottom: 20px;");
+        h1.innerHTML = "잠시만 기다리시면";
+        var h3 = document.createElement("h1");
+        h3.innerHTML = "응원 캡슐이 나옵니다!"
+        h3.setAttribute("style", "margin-bottom: 100px;");
+
+        var h2 = document.createElement("h2");
+        h2.innerHTML = "코로나까지 겹쳐 지쳐있을";
+        var h2_ = document.createElement("h2");
+        h2_.innerHTML = "수험생 여러분들";
+        var h2__ = document.createElement("h2");
+        h2.setAttribute("style", "font-size: 40px;");
+        h2_.setAttribute("style", "font-size: 40px;");
+        h2__.setAttribute("style", "margin-bottom: 100px;font-size: 40px;");
+        h2__.innerHTML = "끝까지 포기하지 말고 힘내세요!";
+
+        var img = document.createElement("img");
+        img.setAttribute("src", "./img/smile.png");
+        img.setAttribute("style", "width:322.5px; height: 325.5px; padding-left: 100px;")
+        var day = document.createElement("h2");
+        day.setAttribute("style", "padding-left: 170px; margin-top: 50px;")
+        day.innerHTML = "D-day " + getDDay();
+
+        var button = document.createElement("button");
+        button.innerHTML = "설문/오류 신고";
+        button.setAttribute("id", "lastbut");
+        button.setAttribute("onclick", "location.href = 'https://forms.gle/nM3UHRS3MdV6Uayq9';");
+        var buttoncont = document.createElement("div");
+        buttoncont.setAttribute("class", "butcon");
+
+
+
+        var container = document.getElementById("page3");
+        container.appendChild(h1);
+        container.appendChild(h3);
+        container.appendChild(h2);
+        container.appendChild(h2_);
+        container.appendChild(h2__);
+        container.appendChild(img);
+        container.appendChild(day);
+        container.appendChild(buttoncont);
+        buttoncont.appendChild(button);
+      }
+      else {
+        document.getElementById("main")
+          .removeChild(document.getElementById("page2"));
+
+        var h1 = document.createElement("h1");
+        h1.setAttribute("style","margin-bottom: 20px;");
+        h1.innerHTML = "재고량이 다 떨어졌습니다..";
+        var h3 = document.createElement("h1");
+        h3.innerHTML = "다음 기회에!"
+        h3.setAttribute("style", "margin-bottom: 100px;");
+
+        var button = document.createElement("button");
+        button.innerHTML = "설문/오류 신고";
+        button.setAttribute("id", "lastbut");
+        button.setAttribute("onclick", "location.href = 'https://forms.gle/nM3UHRS3MdV6Uayq9';");
+        var buttoncont = document.createElement("div");
+        buttoncont.setAttribute("class", "butcon");
+
+        var container = document.getElementById("page3");
+        container.appendChild(h1);
+        container.appendChild(h3);
+
+        container.appendChild(buttoncont);
+        buttoncont.appendChild(button);
+
+      }
+    });
+
     //callPost(data);
 
-    // UI 구성
-    document.getElementById("main")
-      .removeChild(document.getElementById("page2"));
-
-    var h1 = document.createElement("h1");
-    h1.setAttribute("style","margin-bottom: 20px;");
-    h1.innerHTML = "잠시만 기다리시면";
-    var h3 = document.createElement("h1");
-    h3.innerHTML = "응원 캡슐이 나옵니다!"
-    h3.setAttribute("style", "margin-bottom: 100px;");
-
-    var h2 = document.createElement("h2");
-    h2.innerHTML = "코로나까지 겹쳐 지쳐있을";
-    var h2_ = document.createElement("h2");
-    h2_.innerHTML = "수험생 여러분들";
-    var h2__ = document.createElement("h2");
-    h2.setAttribute("style", "font-size: 40px;");
-    h2_.setAttribute("style", "font-size: 40px;");
-    h2__.setAttribute("style", "margin-bottom: 100px;font-size: 40px;");
-    h2__.innerHTML = "끝까지 포기하지 말고 힘내세요!";
-
-    var img = document.createElement("img");
-    img.setAttribute("src", "./img/smile.png");
-    img.setAttribute("style", "width:322.5px; height: 325.5px; padding-left: 100px;")
-    var day = document.createElement("h2");
-    day.setAttribute("style", "padding-left: 170px; margin-top: 50px;")
-    day.innerHTML = "D-day " + getDDay();
-
-    var button = document.createElement("button");
-    button.innerHTML = "설문/오류 신고";
-    button.setAttribute("id", "lastbut");
-    button.setAttribute("onclick", "location.href = 'https://forms.gle/nM3UHRS3MdV6Uayq9';");
-    var buttoncont = document.createElement("div");
-    buttoncont.setAttribute("class", "butcon");
-
-
-
-    var container = document.getElementById("page3");
-    container.appendChild(h1);
-    container.appendChild(h3);
-    container.appendChild(h2);
-    container.appendChild(h2_);
-    container.appendChild(h2__);
-    container.appendChild(img);
-    container.appendChild(day);
-    container.appendChild(buttoncont);
-    buttoncont.appendChild(button);
+    
     //callPost();
 }
  
