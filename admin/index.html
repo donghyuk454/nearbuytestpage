@@ -102,7 +102,7 @@
         $.get(server + "/check", function(r) {
             console.log(r);
             
-            if(r.stock) {
+            if(r.stock >= 0) {
                 var stock = r.stock;
                 console.log("stock : " + stock);
                 document.getElementById("count").innerHTML = stock.toString() + " 개";
