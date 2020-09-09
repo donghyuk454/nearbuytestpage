@@ -332,10 +332,27 @@ function nextpage2() {
 
         var h1 = document.createElement("h1");
         h1.setAttribute("style","margin-bottom: 20px;");
-        h1.innerHTML = "재고량이 다 떨어졌습니다..";
+        h1.innerHTML = "재고가 없어요";
         var h3 = document.createElement("h1");
-        h3.innerHTML = "다음 기회에!"
+        h3.innerHTML = "다음에 이용해주세요!"
         h3.setAttribute("style", "margin-bottom: 100px;");
+
+        var h2 = document.createElement("h2");
+        h2.innerHTML = "코로나까지 겹쳐 지쳐있을";
+        var h2_ = document.createElement("h2");
+        h2_.innerHTML = "수험생 여러분들";
+        var h2__ = document.createElement("h2");
+        h2.setAttribute("style", "font-size: 40px;");
+        h2_.setAttribute("style", "font-size: 40px;");
+        h2__.setAttribute("style", "margin-bottom: 100px;font-size: 40px;");
+        h2__.innerHTML = "끝까지 포기하지 말고 힘내세요!";
+
+        var img = document.createElement("img");
+        img.setAttribute("src", "./img/nostock.png");
+        img.setAttribute("style", "width:322.5px; height: 325.5px; padding-left: 100px;")
+        var day = document.createElement("h2");
+        day.setAttribute("style", "padding-left: 170px; margin-top: 50px;")
+        day.innerHTML = "D-day " + getDDay();
 
         var button = document.createElement("button");
         button.innerHTML = "설문/오류 신고";
@@ -344,13 +361,18 @@ function nextpage2() {
         var buttoncont = document.createElement("div");
         buttoncont.setAttribute("class", "butcon");
 
+
+
         var container = document.getElementById("page3");
         container.appendChild(h1);
         container.appendChild(h3);
-
+        container.appendChild(h2);
+        container.appendChild(h2_);
+        container.appendChild(h2__);
+        container.appendChild(img);
+        container.appendChild(day);
         container.appendChild(buttoncont);
         buttoncont.appendChild(button);
-
       }
     });
 
