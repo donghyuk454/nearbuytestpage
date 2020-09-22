@@ -1,8 +1,9 @@
-const server = "http://ec2-3-136-116-6.us-east-2.compute.amazonaws.com:3000";
+const server = "http://183.98.4.54:8887";
 
-function callPost(data)
+function callPost()
 {
-  $.post(server + "/db", data, function(r){
+  var data = {message: "success"};
+  $.post(server, data, function(r){
     //var o = JSON.parse(r);
     console.log(r);
   });

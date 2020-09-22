@@ -205,6 +205,7 @@
 <script src="./post.js"></script>
 <script>
 var gender = 0; // 남자면 1, 여자면 2
+const server = "http://ec2-3-129-5-85.us-east-2.compute.amazonaws.com:3000/minus";
 buttoncontrol();
 
 function button_center()
@@ -274,12 +275,14 @@ function nextpage2() {
     data.gender = gender;
     // TODO: 사물함에 요청 보내기
 
-    $.post("http://ec2-3-129-5-85.us-east-2.compute.amazonaws.com:3000/minus", function(r){
+    $.post(server, function(r){// db 연결
       //var o = JSON.parse(r);
       console.log(r);
 
       if(r.content === "-1 done") {
         // UI 구성
+        callPost(); // Q-box와 연결
+
         document.getElementById("main")
           .removeChild(document.getElementById("page2"));
 
@@ -313,8 +316,6 @@ function nextpage2() {
         button.setAttribute("onclick", "location.href = 'https://forms.gle/nM3UHRS3MdV6Uayq9';");
         var buttoncont = document.createElement("div");
         buttoncont.setAttribute("class", "butcon");
-
-
 
         var container = document.getElementById("page3");
         container.appendChild(h1);
@@ -362,8 +363,6 @@ function nextpage2() {
         var buttoncont = document.createElement("div");
         buttoncont.setAttribute("class", "butcon");
 
-
-
         var container = document.getElementById("page3");
         container.appendChild(h1);
         container.appendChild(h3);
@@ -376,11 +375,6 @@ function nextpage2() {
         buttoncont.appendChild(button);
       }
     });
-
-    //callPost(data);
-
-    
-    //callPost();
 }
  
 
