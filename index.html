@@ -205,7 +205,7 @@
 <script src="./post.js"></script>
 <script>
 var gender = 0; // 남자면 1, 여자면 2
-const server = "http://ec2-3-129-5-85.us-east-2.compute.amazonaws.com:3000/minus";
+const server_ = "http://ec2-3-129-5-85.us-east-2.compute.amazonaws.com:3000/minus";
 buttoncontrol();
 
 function button_center()
@@ -275,7 +275,7 @@ function nextpage2() {
     data.gender = gender;
     // TODO: 사물함에 요청 보내기
 
-    $.post(server, function(r){// db 연결
+    $.post(server_, function(r){// db 연결
       //var o = JSON.parse(r);
       console.log(r);
 
