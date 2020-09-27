@@ -1,247 +1,257 @@
 <html>
-  <head>
-    <style>
-      @font-face {
-        font-family: 'basic';
-        src: url(./CookieRunFont_OTF/CookieRunFont_OTF/CookieRun\ Regular.otf);
-      }
-      html,
-      body {
-        display: -webkit-box;
-        display: flex;
-        min-height: 100%;
-        -webkit-box-pack: center;
-                justify-content: center;
-        -webkit-box-align: center;
-                align-items: center;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-                flex-direction: column;
-        font-family: 'basic';
-      }
 
-      ul,
-      li {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
+<head>
+  <style>
+    @font-face {
+      font-family: 'basic';
+      src: url(./CookieRunFont_OTF/CookieRunFont_OTF/CookieRun\ Regular.otf);
+    }
 
-      .tg-list {
-        text-align: center;
-        display: -webkit-box;
-        display: flex;
-        -webkit-box-align: center;
-                align-items: center;
-      }
+    html,
+    body {
+      display: -webkit-box;
+      display: flex;
+      min-height: 100%;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      font-family: 'basic';
+    }
 
-      .tg-list-item {
-        margin: 0 2em;
-      }
+    ul,
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-      h1 {
-        font-size: 60px;
-        margin-top: 0px;
-      }
+    .tg-list {
+      text-align: center;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+    }
 
-      h2 {
-        font-size: 40px;
-       
-      }
+    .tg-list-item {
+      margin: 0 2em;
+    }
 
-      h3 {
-        font-size: 35px;
-        color: #777;
-        margin-top: 0px;
-        margin-bottom: 200px;
-      }
+    h1 {
+      font-size: 60px;
+      margin-top: 0px;
+    }
 
-      strong {
-        margin-bottom: 30px;
-        font-size: 40px;
-      }
+    h2 {
+      font-size: 40px;
 
-      h4 {
-        color: #999;
-      }
+    }
 
-      .toggle {
-        width: 35px;
-        height: 35px;
-      }
-      #lastbut {
-        background-color: #2e2831;
-        border: 1px solid white;
-        color: white;
-        size: 40ch;
-        width: 400px;
-        height: 100px;
-        font-size: 45px;
-        position: absolute;
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
-        border-bottom-left-radius: 50px;
-        border-bottom-right-radius: 50px;
-        font-family: 'basic';
-        margin-top: 50px;
-        left: 290px;
-      }
-      #but {
-        background-color: #2e2831;
-        border: 1px solid white;
-        color: white;
-        size: 40ch;
-        width: 300px;
-        height: 100px;
-        font-size: 60px;
-        position: absolute;
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        margin-top: 300px;
-        
-        left: 340px;
-      }
-      #but:active { 
-        border: 2px solid white;
-      }
-      #boy {
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        margin-left: -50px;
-        height: 80px;
-        width: 200px;
-        font-size: 40px;
-        margin-bottom: 20px;
-      }
-      #boy:active { 
-        position: relative; 
-        top: 2px; 
-        margin-bottom: 2px; 
-        box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.42); 
-      }
-      #girl {
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        margin-left: 50px;
-        height: 80px;
-        width: 200px;
-        font-size: 40px;
-        margin-bottom: 20px;
-      }
-      #girl:active { 
-        position: relative; 
-        top: 2px; 
-        padding-bottom: 2px; 
-        box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.42); 
-      }
-      #btn_group {
-        padding-left: 150px;
-        margin-bottom: 20px;
-      }
-      #btn_group button {
-        border: 1px solid #2e2831;
-        background-color: gray;
-        color: white;
-        padding: 5px;
-        margin-top: 100px;
-      }
-      #btn_group button:hover{
-        color:white;
-        background-color: gray;
-      }
-      #egg {
-        margin-top: 200px;
-        left: 50%;
-        padding-left: 40px;
-        width: 570px;
-      }
-      #main{
-        height: 1200px;
-      }
-      .togcon {
-        margin-top: 300px;
-        padding-left: 200px;
-      }
-      </style>
-  </head>
-  <body>
-    <div id="main">
-      <div id="page1">
-          <!--<h1>Nearbuy Test Page</h1>-->
-          <h1>1인당 한번씩만 부탁드려요!</h1>
-          <div style="margin-left: 70px;">
-            <h1>성별을 선택해주세요.</h1>
-          </div>
-          <div id="btn_group">
-            <button id="boy" onclick="button_clicked('gender', 1);">남자</button>
-            <button id="girl" onclick="button_clicked('gender', 2);">여자</button>
-          </div>
-          
-          <div class="togcon">
-            <strong>정보수집에 동의</strong>
-            <input type="checkbox" id="check" class="toggle" onclick="buttoncontrol();"></input>
-          </div>
-          <div class="butcon">
-            <button class="button" id="but" value="Next" onclick="nextpage1();">NEXT!</button>
-          </div>
-        </div>
-      <div id="page2">
-  
+    h3 {
+      font-size: 35px;
+      color: #777;
+      margin-top: 0px;
+      margin-bottom: 200px;
+    }
+
+    strong {
+      margin-bottom: 30px;
+      font-size: 40px;
+    }
+
+    h4 {
+      color: #999;
+    }
+
+    .toggle {
+      width: 35px;
+      height: 35px;
+    }
+
+    #lastbut {
+      background-color: #2e2831;
+      border: 1px solid white;
+      color: white;
+      size: 40ch;
+      width: 400px;
+      height: 100px;
+      font-size: 45px;
+      position: absolute;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      font-family: 'basic';
+      margin-top: 50px;
+      left: 290px;
+    }
+
+    #but {
+      background-color: #2e2831;
+      border: 1px solid white;
+      color: white;
+      size: 40ch;
+      width: 300px;
+      height: 100px;
+      font-size: 60px;
+      position: absolute;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      margin-top: 300px;
+
+      left: 340px;
+    }
+
+    #but:active {
+      border: 2px solid white;
+    }
+
+    #boy {
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      margin-left: -50px;
+      height: 80px;
+      width: 200px;
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    #boy:active {
+      position: relative;
+      top: 2px;
+      margin-bottom: 2px;
+      box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.42);
+    }
+
+    #girl {
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      margin-left: 50px;
+      height: 80px;
+      width: 200px;
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    #girl:active {
+      position: relative;
+      top: 2px;
+      padding-bottom: 2px;
+      box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.42);
+    }
+
+    #btn_group {
+      padding-left: 150px;
+      margin-bottom: 20px;
+    }
+
+    #btn_group button {
+      border: 1px solid #2e2831;
+      background-color: gray;
+      color: white;
+      padding: 5px;
+      margin-top: 100px;
+    }
+
+    #btn_group button:hover {
+      color: white;
+      background-color: gray;
+    }
+
+    #egg {
+      margin-top: 200px;
+      left: 50%;
+      padding-left: 40px;
+      width: 570px;
+    }
+
+    #main {
+      height: 1200px;
+    }
+
+    .togcon {
+      margin-top: 300px;
+      padding-left: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div id="page1">
+      <!--<h1>Nearbuy Test Page</h1>-->
+      <h1>1인당 한번씩만 부탁드려요!</h1>
+      <div style="margin-left: 70px;">
+        <h1>성별을 선택해주세요.</h1>
       </div>
-      <div id="page3">
-  
+      <div id="btn_group">
+        <button id="boy" onclick="button_clicked('gender', 1);">남자</button>
+        <button id="girl" onclick="button_clicked('gender', 2);">여자</button>
       </div>
-  </body>
-    
+
+      <div class="togcon">
+        <strong>정보수집에 동의</strong>
+        <input type="checkbox" id="check" class="toggle" onclick="buttoncontrol();"></input>
+      </div>
+      <div class="butcon">
+        <button class="button" id="but" value="Next" onclick="nextpage1();">NEXT!</button>
+      </div>
+    </div>
+    <div id="page2">
+
+    </div>
+    <div id="page3">
+
+    </div>
+</body>
+
 </html>
 <script src="post.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 <script src="./post.js"></script>
 <script>
-var gender = 0; // 남자면 1, 여자면 2
-const server_ = "http://ec2-3-129-5-85.us-east-2.compute.amazonaws.com:3000/minus";
-buttoncontrol();
+  var gender = 0; // 남자면 1, 여자면 2
+  const server_ = "http://ec2-3-129-5-85.us-east-2.compute.amazonaws.com:3000/minus";
+  buttoncontrol();
 
-function button_center()
-{
-  document.getElementById("but").style = "left: 340;"
-}
+  function button_center() {
+    document.getElementById("but").style = "left: 340;"
+  }
 
-function buttoncontrol()
-{
-  if(gender !== 0 && document.getElementById('check').checked === true)
-    {
-        document.getElementById('but').style = "background-color: #2e2831;";  
+  function buttoncontrol() {
+    if (gender !== 0 && document.getElementById('check').checked === true) {
+      document.getElementById('but').style = "background-color: #2e2831;";
     }
-    else
-    {
-        document.getElementById('but').style = "background-color: gray;";
+    else {
+      document.getElementById('but').style = "background-color: gray;";
     }
-}
+  }
 
-// 두번째 페이지 구성
-function nextpage1() { 
+  // 두번째 페이지 구성
+  function nextpage1() {
     console.log("page2");
-    if(gender === 0)
-    {
-        alert("성별을 체크해주세요");
-        return;
+    if (gender === 0) {
+      alert("성별을 체크해주세요");
+      return;
     }
-    else if (document.getElementById('check').checked === false)
-    {
-        alert('정보 수집에 동의해주세요')
-        return;
+    else if (document.getElementById('check').checked === false) {
+      alert('정보 수집에 동의해주세요')
+      return;
     }
     // UI 구성
     document.getElementById("main")
-        .removeChild(document.getElementById("page1"));
-    
+      .removeChild(document.getElementById("page1"));
+
     var h1 = document.createElement("h1");
     h1.innerHTML = "버튼을 눌러 캡슐을 뽑으세요!";
 
@@ -262,10 +272,10 @@ function nextpage1() {
     container.appendChild(buttoncont);
 
     buttoncont.appendChild(button);
-}
+  }
 
-// 세번째 페이지 구성
-function nextpage2() { 
+  // 세번째 페이지 구성
+  function nextpage2() {
     console.log("page3");
 
     var data = {
@@ -275,57 +285,57 @@ function nextpage2() {
     data.gender = gender;
     // TODO: 사물함에 요청 보내기
 
-    $.post(server_, function(r){// db 연결
+    $.post(server_, function (r) {// db 연결
       //var o = JSON.parse(r);
       console.log(r);
 
-      if(r.content === "-1 done") {
+      if (r.content === "-1 done") {
         // UI 구성
-        callPost(function() {
+        callPost(function () {
           document.getElementById("main")
-          .removeChild(document.getElementById("page2"));
+            .removeChild(document.getElementById("page2"));
 
-        var h1 = document.createElement("h1");
-        h1.setAttribute("style","margin-bottom: 20px;");
-        h1.innerHTML = "잠시만 기다리시면";
-        var h3 = document.createElement("h1");
-        h3.innerHTML = "응원 캡슐이 나옵니다!"
-        h3.setAttribute("style", "margin-bottom: 100px;");
+          var h1 = document.createElement("h1");
+          h1.setAttribute("style", "margin-bottom: 20px;");
+          h1.innerHTML = "잠시만 기다리시면";
+          var h3 = document.createElement("h1");
+          h3.innerHTML = "응원 캡슐이 나옵니다!"
+          h3.setAttribute("style", "margin-bottom: 100px;");
 
-        var h2 = document.createElement("h2");
-        h2.innerHTML = "코로나까지 겹쳐 지쳐있을";
-        var h2_ = document.createElement("h2");
-        h2_.innerHTML = "수험생 여러분들";
-        var h2__ = document.createElement("h2");
-        h2.setAttribute("style", "font-size: 40px;");
-        h2_.setAttribute("style", "font-size: 40px;");
-        h2__.setAttribute("style", "margin-bottom: 100px;font-size: 40px;");
-        h2__.innerHTML = "끝까지 포기하지 말고 힘내세요!";
+          var h2 = document.createElement("h2");
+          h2.innerHTML = "코로나까지 겹쳐 지쳐있을";
+          var h2_ = document.createElement("h2");
+          h2_.innerHTML = "수험생 여러분들";
+          var h2__ = document.createElement("h2");
+          h2.setAttribute("style", "font-size: 40px;");
+          h2_.setAttribute("style", "font-size: 40px;");
+          h2__.setAttribute("style", "margin-bottom: 100px;font-size: 40px;");
+          h2__.innerHTML = "끝까지 포기하지 말고 힘내세요!";
 
-        var img = document.createElement("img");
-        img.setAttribute("src", "./img/smile.png");
-        img.setAttribute("style", "width:322.5px; height: 325.5px; padding-left: 100px;")
-        var day = document.createElement("h2");
-        day.setAttribute("style", "padding-left: 170px; margin-top: 50px;")
-        day.innerHTML = "D-day " + getDDay();
+          var img = document.createElement("img");
+          img.setAttribute("src", "./img/smile.png");
+          img.setAttribute("style", "width:322.5px; height: 325.5px; padding-left: 100px;")
+          var day = document.createElement("h2");
+          day.setAttribute("style", "padding-left: 170px; margin-top: 50px;")
+          day.innerHTML = "D-day " + getDDay();
 
-        var button = document.createElement("button");
-        button.innerHTML = "설문/오류 신고";
-        button.setAttribute("id", "lastbut");
-        button.setAttribute("onclick", "location.href = 'https://forms.gle/nM3UHRS3MdV6Uayq9';");
-        var buttoncont = document.createElement("div");
-        buttoncont.setAttribute("class", "butcon");
+          var button = document.createElement("button");
+          button.innerHTML = "설문/오류 신고";
+          button.setAttribute("id", "lastbut");
+          button.setAttribute("onclick", "location.href = 'https://forms.gle/nM3UHRS3MdV6Uayq9';");
+          var buttoncont = document.createElement("div");
+          buttoncont.setAttribute("class", "butcon");
 
-        var container = document.getElementById("page3");
-        container.appendChild(h1);
-        container.appendChild(h3);
-        container.appendChild(h2);
-        container.appendChild(h2_);
-        container.appendChild(h2__);
-        container.appendChild(img);
-        container.appendChild(day);
-        container.appendChild(buttoncont);
-        buttoncont.appendChild(button);
+          var container = document.getElementById("page3");
+          container.appendChild(h1);
+          container.appendChild(h3);
+          container.appendChild(h2);
+          container.appendChild(h2_);
+          container.appendChild(h2__);
+          container.appendChild(img);
+          container.appendChild(day);
+          container.appendChild(buttoncont);
+          buttoncont.appendChild(button);
         }); // Q-box와 연결
 
       }
@@ -334,7 +344,7 @@ function nextpage2() {
           .removeChild(document.getElementById("page2"));
 
         var h1 = document.createElement("h1");
-        h1.setAttribute("style","margin-bottom: 20px;");
+        h1.setAttribute("style", "margin-bottom: 20px;");
         h1.innerHTML = "재고가 없어요";
         var h3 = document.createElement("h1");
         h3.innerHTML = "다음에 이용해주세요!"
@@ -376,11 +386,11 @@ function nextpage2() {
         buttoncont.appendChild(button);
       }
     });
-}
- 
+  }
 
-// D-day 계산
-function getDDay() {
+
+  // D-day 계산
+  function getDDay() {
     var today = new Date();
     console.log(today);
     var d_day = new Date();
@@ -393,42 +403,39 @@ function getDDay() {
     console.log(d_day);
     console.log(d_day - today);
 
-    return (parseInt((d_day - today) / (1000*60*60*24) + 1)).toString();
-}
+    return (parseInt((d_day - today) / (1000 * 60 * 60 * 24) + 1)).toString();
+  }
 
-// 성별 버튼 클릭 함수
-function button_clicked(type, value) {
+  // 성별 버튼 클릭 함수
+  function button_clicked(type, value) {
     button_clear_gender(type);
 
-    if(type === "gender")
-    {
+    if (type === "gender") {
       gender = value; // 남자면 1, 여자면 2
       console.log("성별: 남자면 1, 여자면 2  =>   " + gender);
       check_gender(value);
     }
 
     buttoncontrol();
-}
-// 성별 버튼 리셋
-function button_clear_gender()
-{
+  }
+  // 성별 버튼 리셋
+  function button_clear_gender() {
     document.getElementById("boy").style = "";
     document.getElementById("girl").style = "";
-}
+  }
 
-function check_gender(value)
-{
-    if(value === 1) // 남자 체크
+  function check_gender(value) {
+    if (value === 1) // 남자 체크
     {
-        document.getElementById("boy").style = "background-color: black;"
+      document.getElementById("boy").style = "background-color: black;"
     }
     else if (value === 2) // 여자 체크
     {
       document.getElementById("girl").style = "background-color: black;"
     }
-    else 
+    else
       return;
-}
+  }
 
 
 </script>
