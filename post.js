@@ -6,8 +6,9 @@ function callPost(cb)
   $.post("http://ec2-3-129-5-85.us-east-2.compute.amazonaws.com:3000/open", data, function(r){
     //var o = JSON.parse(r);
     console.log(r);
-    cb();
+    //cb();
   });
+  cb();
 }
 /*
 function callPost_open(data)
