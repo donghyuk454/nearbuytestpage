@@ -281,9 +281,8 @@ function nextpage2() {
 
       if(r.content === "-1 done") {
         // UI 구성
-        callPost(); // Q-box와 연결
-
-        document.getElementById("main")
+        callPost(function() {
+          document.getElementById("main")
           .removeChild(document.getElementById("page2"));
 
         var h1 = document.createElement("h1");
@@ -327,6 +326,8 @@ function nextpage2() {
         container.appendChild(day);
         container.appendChild(buttoncont);
         buttoncont.appendChild(button);
+        }); // Q-box와 연결
+
       }
       else {
         document.getElementById("main")
