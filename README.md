@@ -6,6 +6,8 @@ nearbuy test는 nearbuy의 테스트 버전으로, 학원에서 학생들을 응
 
 해당 프로젝트는 스마트 자판기의 frontend와 admin page입니다.
 
+프로젝트에 있는 시연 영상과 참여 영상을 통해 어떻게 사용하였는 지 확인할 수 있습니다.
+
 ## 자판기 기능 구조
 
 ![image](https://user-images.githubusercontent.com/20418155/173380812-fc41bba8-70d2-4e23-b7ea-cdbbac015b74.png)
